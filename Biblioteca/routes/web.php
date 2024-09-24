@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\PublisherController;
 
 /*
@@ -25,3 +26,7 @@ Route::resource('authors', AuthorController::class);
 Route::resource('categories', CategoryController::class);
 
 Route::resource('publishers', PublisherController::class);
+
+Route::post('/books/{book}/comments', [CommentController::class, 'store'])
+    ->name('comments.store')
+    ->middleware('auth');

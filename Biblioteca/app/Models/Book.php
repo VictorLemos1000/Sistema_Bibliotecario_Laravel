@@ -22,6 +22,10 @@ class Book extends Model
         return $this->belongsTo(CategorySeeder::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 
 }
     $books = Book::where('published_year', '>', 1950)->orderBy('title', 'asc')-> take(5)->get();
