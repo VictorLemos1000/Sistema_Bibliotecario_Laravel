@@ -40,7 +40,7 @@ class Book extends Model
     echo "Ano da primeira publicação: " . $earliestPublication . "\n";
     echo "Ano da última publicação: " . $latestPublication . "\n";
 
-    $books = Book::all(); // Uma consulta para buscar todos os livros
+    $books = Book::all();
 
     foreach ($books as $book) {
         echo $book->author->name . "\n";
