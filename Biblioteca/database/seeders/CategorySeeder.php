@@ -2,35 +2,25 @@
 
 namespace Database\Seeders;
 
-use App\Models\Category;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\Category;
 
 class CategorySeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $categories = [
-            'Ficção',
-            'Não-ficção',
+            'Romance',
             'Fantasia',
-            'Ciência',
-            'Biografia',
-            'História',
-            'Tecnologia',
-            'Arte',
-            'Culinária',
-            'Viagem'
+            'Ficção Científica',
+            'Ficção Brasileira',
+            'Clássico',
+            'Suspense'
         ];
 
         foreach ($categories as $category) {
-            Category::create(['name' => $category]);
+            // Verifica se a categoria já existe antes de criar
+            $category::firstOrCreate(['name' => $category]);
         }
     }
-
 }
