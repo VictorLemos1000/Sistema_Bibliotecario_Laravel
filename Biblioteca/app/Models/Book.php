@@ -46,3 +46,4 @@ class Book extends Model
         echo $book->author->name . "\n";
     }
 
+

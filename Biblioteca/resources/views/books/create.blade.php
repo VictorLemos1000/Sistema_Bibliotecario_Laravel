@@ -7,7 +7,7 @@
             @csrf
             <div class="mb-3">
                 <label for="title" class="form-label">Título</label>
-                <input type="text" class="form-control" id="title" name="title" value="{{ old('title') }}" required>
+                <input type="file" class="form-control" id="cover_image" name="cover_image" accept="image/*">
             </div>
             <div class="mb-3">
                 <label for="author_id" class="form-label">Autor</label>

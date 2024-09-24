@@ -53,7 +53,6 @@ class CategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Categoria atualizada com sucesso!');
     }
 
-    // Função para excluir uma categoria do banco de dados
     public function destroy($id)
     {
         // $category = Category::findOrFail($id);
